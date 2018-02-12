@@ -1,21 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building docker image'
-        sh '/usr/local/bin/docker build . -t docker-ci-cd:1'
-      }
+    agent {
+        docker { image 'node:7-alpine' }
     }
-    stage('Test') {
-      steps {
-        echo 'testing docker image'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
-    stage('Publish') {
-      steps {
-        echo 'Ready to publish'
-      }
-    }
-  }
 }
