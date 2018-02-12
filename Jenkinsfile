@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building docker image'
-        sh '/usr/local/bin/docker build . -t docker-ci-cd:1'
+        sh 'sudo /usr/local/bin/docker build . -t docker-ci-cd:1'
       }
     }
     stage('Test') {
