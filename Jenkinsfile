@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building docker image'
-        sh 'docker build . -t deocker-ci-cd:1'
+        sh 'docker build . -t docker-ci-cd:1'
       }
     }
     stage('Test') {
